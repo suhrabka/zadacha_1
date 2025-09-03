@@ -15,7 +15,6 @@ public class Main {
             userService.createUsersTable();
             System.out.println("Таблица users создана");
 
-            // Добавляем 4 пользователей
             userService.saveUser("Иван", "Иванов", (byte) 25);
             userService.saveUser("Петр", "Петров", (byte) 30);
             userService.saveUser("Мария", "Сидорова", (byte) 28);
@@ -23,18 +22,15 @@ public class Main {
 
             System.out.println("Пользователи добавлены в базу данных");
 
-            // Получаем всех пользователей и выводим их
+
             System.out.println("\nСписок всех пользователей:");
             List<User> users = userService.getAllUsers();
             for (User user : users) {
                 System.out.println(user);
             }
-
-            // Очищаем таблицу
             userService.cleanUsersTable();
             System.out.println("\nТаблица users очищена");
 
-            // Удаляем таблицу
             userService.dropUsersTable();
             System.out.println("Таблица users удалена");
 
